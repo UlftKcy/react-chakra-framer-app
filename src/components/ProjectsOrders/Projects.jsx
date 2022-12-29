@@ -2,7 +2,7 @@ import { Card, CardBody, CardHeader, Heading, Table, TableCaption, TableContaine
 
 const Projects = () => {
   return (
-    <Card w='100%' h="100%" color="white" bgGradient='linear(to-r, blue.900, blue.600)'>
+    <Card w='100%' h="100%" color="white" px={3}>
             <CardHeader>
                 <Heading size="md">Projects</Heading>
             </CardHeader>

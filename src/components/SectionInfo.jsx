@@ -5,8 +5,8 @@ import React, { Fragment } from 'react'
 const SectionInfo = () => {
     return (
         <Fragment>
-            <GridItem colSpan={{ base: "2", md: "2", lg: "2" }} borderRadius="lg">
-                <Card w='100%' h="100%" bgGradient='linear(to-r, blue.900, blue.600)'>
+            <GridItem colSpan={{ base: "2", md: "2", lg: "2" }} borderRadius="lg" bgGradient='linear(to-r, blue.900, blue.600)'>
+                <Card w='100%' h="100%">
                     <CardBody>
                         <Stack spacing={8}>
                             <Box>
@@ -23,8 +23,8 @@ const SectionInfo = () => {
                     </CardFooter>
                 </Card>
             </GridItem>
-            <GridItem colSpan={{ base: "2", md: "1", lg: "1" }} borderRadius="lg">
-                <Card w='100%' h="100%" bgGradient='linear(to-r, blue.900, blue.600)'>
+            <GridItem colSpan={{ base: "2", md: "1", lg: "1" }} borderRadius="lg" bgGradient='linear(to-r, blue.900, blue.600)'>
+                <Card w='100%' h="100%">
                     <CardHeader>
                         <Box>
                             <Heading size="sm" color="white">Satisfaction Rate</Heading>
@@ -45,8 +45,8 @@ const SectionInfo = () => {
                     </CardBody>
                 </Card>
             </GridItem>
-            <GridItem colSpan={{ base: "2", md: "1", lg: "1" }} borderRadius="lg">
-                <Card w='100%' h="100%" bgGradient='linear(to-r, blue.900, blue.600)'>
+            <GridItem colSpan={{ base: "2", md: "1", lg: "1" }} borderRadius="lg" bgGradient='linear(to-r, blue.900, blue.600)'>
+                <Card w='100%' h="100%">
                     <CardHeader>
                         <Box display="flex" justifyContent="space-between">
                             <Heading size="sm" color="white">Referral Tracking</Heading>

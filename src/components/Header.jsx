@@ -5,8 +5,8 @@ import { Fragment } from 'react';
 const Header = () => {
     return (
         <Fragment>
-            <GridItem colSpan={{ base: "2", md: "1", lg: "1" }}>
-                <Card w='100%' bgGradient='linear(to-r, gray.400, gray.200)'>
+            <GridItem colSpan={{ base: "2", md: "1", lg: "1" }} bgGradient='linear(to-r, gray.400, gray.200)' borderRadius="lg">
+                <Card w='100%' h="100%">
                     <CardBody>
                         <Flex alignItems="center" justifyContent="space-between">
                             <Box>
@@ -30,8 +30,8 @@ const Header = () => {
                     </CardBody>
                 </Card>
             </GridItem>
-            <GridItem colSpan={{ base: "2", md: "1", lg: "1" }}>
-                <Card w='100%' bgGradient='linear(to-r, gray.400, gray.200)'>
+            <GridItem colSpan={{ base: "2", md: "1", lg: "1" }} bgGradient='linear(to-r, gray.400, gray.200)' borderRadius="lg">
+                <Card w='100%' h="100%">
                     <CardBody>
                         <Flex alignItems="center" justifyContent="space-between">
                             <Box>
@@ -55,8 +55,8 @@ const Header = () => {
                     </CardBody>
                 </Card>
             </GridItem>
-            <GridItem colSpan={{ base: "2", md: "1", lg: "1" }}>
-                <Card w='100%' bgGradient='linear(to-r, gray.400, gray.200)'>
+            <GridItem colSpan={{ base: "2", md: "1", lg: "1" }} bgGradient='linear(to-r, gray.400, gray.200)' borderRadius="lg">
+                <Card w='100%' h="100%">
                     <CardBody>
                         <Flex alignItems="center" justifyContent="space-between">
                             <Box>
@@ -80,8 +80,8 @@ const Header = () => {
                     </CardBody>
                 </Card>
             </GridItem>
-            <GridItem colSpan={{ base: "2", md: "1", lg: "1" }}>
-                <Card w='100%' bgGradient='linear(to-r, gray.400, gray.200)'>
+            <GridItem colSpan={{ base: "2", md: "1", lg: "1" }} bgGradient='linear(to-r, gray.400, gray.200)' borderRadius="lg">
+                <Card w='100%' h="100%">
                     <CardBody>
                         <Flex alignItems="center" justifyContent="space-between">
                             <Box>

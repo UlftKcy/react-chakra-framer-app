@@ -13,6 +13,7 @@ import {
   ListItem,
   Stack,
   DrawerOverlay,
+  useColorMode,
 } from '@chakra-ui/react'
 
 
@@ -62,6 +63,7 @@ const AccountPages = ({ onClick }) => (
 )
 
 const Sidebar = ({ isOpen, variant, onClose }) => {
+  const { colorMode } = useColorMode();
   return variant === 'sidebar' ? (
     <Box
       position="fixed"
@@ -70,7 +72,7 @@ const Sidebar = ({ isOpen, variant, onClose }) => {
       w="200px"
       top={0}
       h="100%"
-      bgGradient='linear(to-r, blue.900, blue.600)'
+      bgGradient={colorMode === "light"? 'linear(to-r, blue.900, blue.600)':""}
     >
       <Box>
         <Heading size='md' color='white' textAlign="center">
@@ -86,7 +88,7 @@ const Sidebar = ({ isOpen, variant, onClose }) => {
   ) : (
     <Drawer isOpen={isOpen} placement="left" onClose={onClose} size="xs">
       <DrawerOverlay>
-        <DrawerContent bgGradient='linear(to-r, blue.900, blue.600)'>
+        <DrawerContent bgGradient={colorMode === "light"? 'linear(to-r, blue.900, blue.600)':""}>
           <DrawerCloseButton color="white" mt="1" />
           <DrawerHeader size='md' color='teal.300'>
             <Link href='#' _hover={{ "textDecoration": "none", "color": "teal.400" }}>Chakra App</Link>

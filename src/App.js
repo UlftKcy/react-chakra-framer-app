@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      <Sidebar variant={variants?.navigation} isOpen={isOpen} onClose={onClose} />
+      <Sidebar variant={variants?.navigation} isOpen={isOpen} onClose={onClose}/>
       <Box ml={!variants?.navigationButton && 200}>
         <Navbar showSidebarButton={variants?.navigationButton} onShowSidebar={onOpen} />
         <Dashboard />
