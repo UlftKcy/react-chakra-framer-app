@@ -1,11 +1,11 @@
 import { CheckIcon, PlusSquareIcon, RepeatClockIcon, TimeIcon } from '@chakra-ui/icons';
-import { Box, Card, CardBody, Flex, Grid, GridItem, Icon, Stat, StatArrow, StatGroup, StatLabel, StatNumber, Text, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Card, CardBody, Flex, GridItem, Icon, Stat, StatArrow, StatGroup, StatLabel, StatNumber, Text } from '@chakra-ui/react';
+import { Fragment } from 'react';
 
 const Header = () => {
-    const variants = useBreakpointValue({base:'repeat(4, 1fr)',sm:'repeat(2, 1fr)'})
     return (
-        <Grid templateColumns={variants} gap={6}>
-            <GridItem>
+        <Fragment>
+            <GridItem colSpan={{ base: "2", md: "1", lg: "1" }}>
                 <Card w='100%' bgGradient='linear(to-r, gray.400, gray.200)'>
                     <CardBody>
                         <Flex alignItems="center" justifyContent="space-between">
@@ -30,7 +30,7 @@ const Header = () => {
                     </CardBody>
                 </Card>
             </GridItem>
-            <GridItem>
+            <GridItem colSpan={{ base: "2", md: "1", lg: "1" }}>
                 <Card w='100%' bgGradient='linear(to-r, gray.400, gray.200)'>
                     <CardBody>
                         <Flex alignItems="center" justifyContent="space-between">
@@ -55,7 +55,7 @@ const Header = () => {
                     </CardBody>
                 </Card>
             </GridItem>
-            <GridItem>
+            <GridItem colSpan={{ base: "2", md: "1", lg: "1" }}>
                 <Card w='100%' bgGradient='linear(to-r, gray.400, gray.200)'>
                     <CardBody>
                         <Flex alignItems="center" justifyContent="space-between">
@@ -80,7 +80,7 @@ const Header = () => {
                     </CardBody>
                 </Card>
             </GridItem>
-            <GridItem>
+            <GridItem colSpan={{ base: "2", md: "1", lg: "1" }}>
                 <Card w='100%' bgGradient='linear(to-r, gray.400, gray.200)'>
                     <CardBody>
                         <Flex alignItems="center" justifyContent="space-between">
@@ -105,7 +105,7 @@ const Header = () => {
                     </CardBody>
                 </Card>
             </GridItem>
-        </Grid>
+        </Fragment>
     )
 }
 

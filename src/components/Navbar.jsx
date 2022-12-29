@@ -7,7 +7,7 @@ const Navbar = ({ showSidebarButton = true, onShowSidebar }) => {
   return (
     <Flex minWidth='max-content' justify="space-between" alignItems='center' mb="10">
       <Box>
-        <Heading size='md'>Chakra App</Heading>
+        <Heading size='md'>Current Page Name</Heading>
       </Box>
       <ButtonGroup gap='2'>
         <Button onClick={toggleColorMode}>

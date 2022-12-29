@@ -1,31 +1,22 @@
-import { Box, Stack, useBreakpointValue } from '@chakra-ui/react';
-import { useState } from 'react';
+import { Box, useBreakpointValue, useDisclosure } from '@chakra-ui/react';
 import './App.css';
-import Header from './components/Header';
 import Navbar from './components/Navbar';
-import SectionInfo from './components/SectionInfo';
 import Sidebar from './components/Sidebar';
-import Statistic from './components/Statistic';
+import Dashboard from './pages/Dashboard';
 
-const smVariant = { navigation: 'drawer', navigationButton: true };
-const mdVariant = { navigation: 'sidebar', navigationButton: false };
+const mdVariant = { navigation: 'drawer', navigationButton: true };
+const lgVariant = { navigation: 'sidebar', navigationButton: false };
 
 function App() {
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
-  const variants = useBreakpointValue({ base: smVariant, md: mdVariant });
-
-  const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const variants = useBreakpointValue({ base: mdVariant, md: mdVariant, lg: lgVariant });
 
   return (
     <div className="App">
-      <Sidebar variant={variants?.navigation} isOpen={isSidebarOpen} onClose={toggleSidebar} />
+      <Sidebar variant={variants?.navigation} isOpen={isOpen} onClose={onClose} />
       <Box ml={!variants?.navigationButton && 200}>
-        <Navbar showSidebarButton={variants?.navigationButton} onShowSidebar={toggleSidebar} />
-        <Stack spacing={8}>
-        <Header />
-        <SectionInfo />
-        <Statistic />
-      </Stack>
+        <Navbar showSidebarButton={variants?.navigationButton} onShowSidebar={onOpen} />
+        <Dashboard />
       </Box>
     </div>
   );

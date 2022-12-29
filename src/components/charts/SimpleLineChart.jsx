@@ -4,10 +4,8 @@ import { data } from '../../utils/chart-data';
 
 const SimpleLineChart = () => {
     return (
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer>
             <LineChart
-                width={500}
-                height={300}
                 data={data}
                 margin={{
                     top: 5,

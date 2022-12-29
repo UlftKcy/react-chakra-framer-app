@@ -4,10 +4,8 @@ import { data } from '../../utils/bar-data';
 
 const BarChart = () => {
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer>
       <AreaChart
-        width={500}
-        height={400}
         data={data}
         margin={{
           top: 10,
