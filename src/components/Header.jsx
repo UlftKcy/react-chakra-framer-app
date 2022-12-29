@@ -16,7 +16,7 @@ const Header = () => {
                                         <StatNumber display="flex" alignItems="center">
                                             $53,000
                                             <Text fontSize="xs" color="gray.700" mb="0" ml="2">
-                                                <StatArrow type='increase'/>
+                                                <StatArrow type='increase' />
                                                 53.36%
                                             </Text>
                                         </StatNumber>
@@ -109,4 +109,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default Header;
