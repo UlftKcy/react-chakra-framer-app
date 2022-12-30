@@ -1,5 +1,5 @@
 import { ArrowForwardIcon, ChevronDownIcon, ViewIcon } from '@chakra-ui/icons'
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, CircularProgress, CircularProgressLabel, Flex, GridItem, Heading, Icon, Stack, Text } from '@chakra-ui/react'
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, CircularProgress, CircularProgressLabel, Flex, GridItem, Heading, Icon, IconButton, Menu, MenuButton, MenuItem, MenuList, Stack, Text } from '@chakra-ui/react'
 import React, { Fragment } from 'react'
 
 const SectionInfo = () => {
@@ -50,7 +50,17 @@ const SectionInfo = () => {
                     <CardHeader>
                         <Box display="flex" justifyContent="space-between">
                             <Heading size="sm" color="white">Referral Tracking</Heading>
-                            <Button size="sm"><Icon><ChevronDownIcon /></Icon></Button>
+                            <Menu>
+                                {({ isOpen }) => (
+                                    <>
+                                         <MenuButton variant="outline" color="white" _hover={{bg:"whiteAlpha.200"}} _active={{bg:"whiteAlpha.400"}} size="sm" isActive={isOpen} as={Button}><ChevronDownIcon /></MenuButton>
+                                        <MenuList>
+                                            <MenuItem>Download</MenuItem>
+                                            <MenuItem onClick={() => alert('Kagebunshin')}>Create a Copy</MenuItem>
+                                        </MenuList>
+                                    </>
+                                )}
+                            </Menu>
                         </Box>
                     </CardHeader>
                     <CardBody>
