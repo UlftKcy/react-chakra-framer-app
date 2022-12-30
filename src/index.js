@@ -12,7 +12,7 @@ root.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-      <RouterProvider router={router}/>
+      <RouterProvider router={router} />
     </ChakraProvider>
   </React.StrictMode>
 );

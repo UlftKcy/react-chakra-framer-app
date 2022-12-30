@@ -21,7 +21,7 @@ const Navbar = ({ showSidebarButton = true, onShowSidebar }) => {
             <Button as={motion.button} whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 1 }} colorScheme='teal' mr={3}>Sign Up</Button>
             <Button as={motion.button} whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 1 }} colorScheme='teal'>Log in</Button>
+              whileTap={{ scale: 1 }} colorScheme='teal'>Login</Button>
           </Box>}
 
       </ButtonGroup>
