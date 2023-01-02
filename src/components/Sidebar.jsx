@@ -1,7 +1,7 @@
 import { AiFillHome } from 'react-icons/ai';
 import { GoProject } from 'react-icons/go';
 import { BsFillBagPlusFill } from 'react-icons/bs';
-import { FaMoneyCheck, FaUserCircle,FaSignInAlt,FaUserPlus} from 'react-icons/fa';
+import { FaMoneyCheck, FaUserCircle, FaSignInAlt } from 'react-icons/fa';
 import {
   Box,
   Drawer,
@@ -13,59 +13,60 @@ import {
   Link,
   Divider,
   List,
-  ListItem,
   Stack,
   DrawerOverlay,
   useColorMode,
   Icon,
+  Text,
 } from '@chakra-ui/react';
-import { Link as ReachLink } from "react-router-dom"
-
+import { Link as ReachLink, NavLink } from "react-router-dom";
 
 const SidebarContent = ({ onClick }) => (
   <List spacing={5}>
-    <ListItem w="100%" justifyContent="left" color='white' fontWeight="bold" _hover={{ "color": "teal.300" }}>
-      <Icon mt={1} boxSize={6}><AiFillHome /></Icon>
-      <Link as={ReachLink} to="/" onClick={onClick} _hover={{ "textDecoration": "none" }} fontSize="sm">Dashboard</Link>
-    </ListItem>
-    <ListItem w="100%" justifyContent="left" color='white' fontWeight="bold" _hover={{ "color": "teal.300" }}>
-      <Icon mt={1} boxSize={6}><GoProject /></Icon>
-      <Link onClick={onClick} _hover={{ "textDecoration": "none" }} fontSize="sm">Projects</Link>
-    </ListItem>
-    <ListItem w="100%" justifyContent="left" color='white' fontWeight="bold" _hover={{ "color": "teal.300" }}>
-      <Icon mt={1} boxSize={6}><BsFillBagPlusFill /></Icon>
-      <Link onClick={onClick} _hover={{ "textDecoration": "none" }} fontSize="sm">Orders</Link>
-    </ListItem>
-    <ListItem w="100%" justifyContent="left" color='white' fontWeight="bold" _hover={{ "color": "teal.300" }}>
-      <Icon mt={1} boxSize={6}><FaMoneyCheck /></Icon>
-      <Link onClick={onClick} _hover={{ "textDecoration": "none" }} fontSize="sm">Billing</Link>
-    </ListItem>
+    <Link as={NavLink} to="/dashboard" _activeLink={{ bg: "blue.800" }} display="flex" alignItems="center" rounded="md" py={1} pr={6} pl={2} onClick={onClick} _hover={{ "textDecoration": "none", "bg": "blue.800" }} fontSize="sm">
+      <Icon mt={2} boxSize={6}><AiFillHome /></Icon>
+      <Text>Dashboard</Text>
+    </Link>
+    <Link as={NavLink} display="flex" alignItems="center" rounded="md" py={1} pr={6} pl={2} onClick={onClick} _hover={{ "textDecoration": "none", "bg": "blue.800" }} fontSize="sm">
+      <Icon mt={2} boxSize={6}><GoProject /></Icon>
+      <Text>Projects</Text>
+    </Link>
+    <Link as={NavLink} display="flex" alignItems="center" rounded="md" py={1} pr={6} pl={2} onClick={onClick} _hover={{ "textDecoration": "none", "bg": "blue.800" }} fontSize="sm">
+      <Icon mt={2} boxSize={6}><BsFillBagPlusFill /></Icon>
+      <Text>Orders</Text>
+    </Link>
+    <Link as={NavLink} display="flex" alignItems="center" rounded="md" py={1} pr={6} pl={2} onClick={onClick} _hover={{ "textDecoration": "none", "bg": "blue.800" }} fontSize="sm">
+      <Icon mt={2} boxSize={6}><FaMoneyCheck /></Icon>
+      <Text>Billing</Text>
+    </Link>
+
   </List>
 );
 
-const AccountPages = ({ onClick }) => (
-  <>
-    <Box>
-      <Heading fontSize='14' color='teal.300' textTransform="uppercase">
-        Account Pages
-      </Heading>
-    </Box>
-    <List spacing={5}>
-      <ListItem w="100%" justifyContent="left" color='white' fontWeight="bold" _hover={{ "color": "teal.300" }}>
-        <Icon mt={1} boxSize={6}><FaUserCircle /></Icon>
-        <Link onClick={onClick} _hover={{ "textDecoration": "none" }} fontSize="sm">Profile</Link>
-      </ListItem>
-      <ListItem w="100%" justifyContent="left" color='white' fontWeight="bold" _hover={{ "color": "teal.300" }}>
-        <Icon mt={1} boxSize={6}><FaSignInAlt /></Icon>
-        <Link as={ReachLink} to="/login" onClick={onClick} _hover={{ "textDecoration": "none" }} fontSize="sm">Login</Link>
-      </ListItem>
-      <ListItem w="100%" justifyContent="left" color='white' fontWeight="bold" _hover={{ "color": "teal.300" }}>
-        <Icon mt={1} boxSize={6}><FaUserPlus /></Icon>
-        <Link onClick={onClick} _hover={{ "textDecoration": "none" }} fontSize="sm">Sign Up</Link>
-      </ListItem>
-    </List>
-  </>
-);
+const AccountPages = ({ onClose }) => {
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+  }
+  return (
+    <>
+      <Box>
+        <Heading fontSize='14' color='teal.300' textTransform="uppercase">
+          Account Pages
+        </Heading>
+      </Box>
+      <List spacing={5}>
+        <Link as={NavLink} display="flex" alignItems="center" rounded="md" py={1} pr={6} pl={2} onClick={onClose} _hover={{ "textDecoration": "none", "bg": "blue.800" }} fontSize="sm">
+          <Icon mt={2} boxSize={6}><FaUserCircle /></Icon>
+          <Text>Profile</Text>
+        </Link>
+        <Link as={NavLink} to="/login" display="flex" alignItems="center" rounded="md" py={1} pr={6} pl={2} onClick={handleLogout} _hover={{ "textDecoration": "none", "bg": "blue.800" }} fontSize="sm">
+          <Icon mt={2} boxSize={6}><FaSignInAlt /></Icon>
+          <Text>Log Out</Text>
+        </Link>
+      </List>
+    </>
+  );
+}
 
 const Sidebar = ({ isOpen, variant, onClose }) => {
   const { colorMode } = useColorMode();
@@ -73,12 +74,12 @@ const Sidebar = ({ isOpen, variant, onClose }) => {
     <Box
       position="fixed"
       left={0}
-      py={6}
-      px={4}
-      w="200px"
+      p={6}
+      w="240px"
       top={0}
       h="100%"
       bgGradient={colorMode === "light" ? 'linear(to-r, blue.900, blue.600)' : ""}
+      boxShadow="2xl"
     >
       <Box>
         <Heading size='md' color='white' textAlign="center">
@@ -86,9 +87,9 @@ const Sidebar = ({ isOpen, variant, onClose }) => {
         </Heading>
       </Box>
       <Divider my="5" />
-      <Stack spacing={7} pl={6}>
-        <SidebarContent onClick={onClose} />
-        <AccountPages onClick={onClose} />
+      <Stack spacing={7}>
+        <SidebarContent onClose={onClose} />
+        <AccountPages onClose={onClose} />
       </Stack>
     </Box>
   ) : (
@@ -101,9 +102,9 @@ const Sidebar = ({ isOpen, variant, onClose }) => {
           </DrawerHeader>
           <Divider mb="5" />
           <DrawerBody>
-            <Stack spacing={7} pl={6}>
-              <SidebarContent onClick={onClose} />
-              <AccountPages onClick={onClose} />
+            <Stack spacing={7}>
+              <SidebarContent onClose={onClose} />
+              <AccountPages onClose={onClose} />
             </Stack>
           </DrawerBody>
         </DrawerContent>
