@@ -1,5 +1,5 @@
 import { ArrowForwardIcon, ChevronDownIcon, ViewIcon } from '@chakra-ui/icons'
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, CircularProgress, CircularProgressLabel, Flex, GridItem, Heading, Icon, IconButton, Menu, MenuButton, MenuItem, MenuList, Stack, Text } from '@chakra-ui/react'
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, CircularProgress, CircularProgressLabel, Flex, GridItem, Heading, Icon, Menu, MenuButton, MenuItem, MenuList, Stack, Text } from '@chakra-ui/react'
 import React, { Fragment } from 'react'
 
 const SectionInfo = () => {

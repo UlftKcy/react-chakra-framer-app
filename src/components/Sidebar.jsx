@@ -21,45 +21,50 @@ import {
 } from '@chakra-ui/react';
 import { Link as ReachLink, NavLink } from "react-router-dom";
 
-const SidebarContent = ({ onClick }) => (
-  <List spacing={5}>
-    <Link as={NavLink} to="/dashboard" _activeLink={{ bg: "blue.800" }} display="flex" alignItems="center" rounded="md" py={1} pr={6} pl={2} onClick={onClick} _hover={{ "textDecoration": "none", "bg": "blue.800" }} fontSize="sm">
-      <Icon mt={2} boxSize={6}><AiFillHome /></Icon>
-      <Text>Dashboard</Text>
-    </Link>
-    <Link as={NavLink} display="flex" alignItems="center" rounded="md" py={1} pr={6} pl={2} onClick={onClick} _hover={{ "textDecoration": "none", "bg": "blue.800" }} fontSize="sm">
-      <Icon mt={2} boxSize={6}><GoProject /></Icon>
-      <Text>Projects</Text>
-    </Link>
-    <Link as={NavLink} display="flex" alignItems="center" rounded="md" py={1} pr={6} pl={2} onClick={onClick} _hover={{ "textDecoration": "none", "bg": "blue.800" }} fontSize="sm">
-      <Icon mt={2} boxSize={6}><BsFillBagPlusFill /></Icon>
-      <Text>Orders</Text>
-    </Link>
-    <Link as={NavLink} display="flex" alignItems="center" rounded="md" py={1} pr={6} pl={2} onClick={onClick} _hover={{ "textDecoration": "none", "bg": "blue.800" }} fontSize="sm">
-      <Icon mt={2} boxSize={6}><FaMoneyCheck /></Icon>
-      <Text>Billing</Text>
-    </Link>
+const SidebarContent = ({ onClick, bgColor }) =>{
+  
+  return (
+    <List spacing={5}>
+      <Link as={NavLink} to="/dashboard" _activeLink={{ bg: bgColor, fontWeight: "semibold" }} display="flex" alignItems="center" rounded="md" py={1} pr={6} pl={2} onClick={onClick} _hover={{ "textDecoration": "none", "bg": bgColor }} fontSize="sm">
+        <Icon mt={2} boxSize={6}><AiFillHome /></Icon>
+        <Text>Dashboard</Text>
+      </Link>
+      <Link as={NavLink} display="flex" alignItems="center" rounded="md" py={1} pr={6} pl={2} onClick={onClick} _hover={{ "textDecoration": "none", "bg": bgColor }} fontSize="sm">
+        <Icon mt={2} boxSize={6}><GoProject /></Icon>
+        <Text>Projects</Text>
+      </Link>
+      <Link as={NavLink} display="flex" alignItems="center" rounded="md" py={1} pr={6} pl={2} onClick={onClick} _hover={{ "textDecoration": "none", "bg": bgColor }} fontSize="sm">
+        <Icon mt={2} boxSize={6}><BsFillBagPlusFill /></Icon>
+        <Text>Orders</Text>
+      </Link>
+      <Link as={NavLink} display="flex" alignItems="center" rounded="md" py={1} pr={6} pl={2} onClick={onClick} _hover={{ "textDecoration": "none", "bg": bgColor }} fontSize="sm">
+        <Icon mt={2} boxSize={6}><FaMoneyCheck /></Icon>
+        <Text>Billing</Text>
+      </Link>
 
-  </List>
-);
+    </List>
+  )
+}
 
-const AccountPages = ({ onClose }) => {
+  ;
+
+const AccountPages = ({ onClose,bgColor }) => {
   const handleLogout = () => {
     localStorage.removeItem("user");
   }
   return (
     <>
       <Box>
-        <Heading fontSize='14' color='teal.300' textTransform="uppercase">
+        <Heading fontSize='13' color='blue.300' textTransform="uppercase">
           Account Pages
         </Heading>
       </Box>
       <List spacing={5}>
-        <Link as={NavLink} display="flex" alignItems="center" rounded="md" py={1} pr={6} pl={2} onClick={onClose} _hover={{ "textDecoration": "none", "bg": "blue.800" }} fontSize="sm">
+        <Link as={NavLink} display="flex" alignItems="center" rounded="md" py={1} pr={6} pl={2} onClick={onClose} _hover={{ "textDecoration": "none", "bg": bgColor }} fontSize="sm">
           <Icon mt={2} boxSize={6}><FaUserCircle /></Icon>
           <Text>Profile</Text>
         </Link>
-        <Link as={NavLink} to="/login" display="flex" alignItems="center" rounded="md" py={1} pr={6} pl={2} onClick={handleLogout} _hover={{ "textDecoration": "none", "bg": "blue.800" }} fontSize="sm">
+        <Link as={NavLink} to="/login" display="flex" alignItems="center" rounded="md" py={1} pr={6} pl={2} onClick={handleLogout} _hover={{ "textDecoration": "none", "bg": bgColor }} fontSize="sm">
           <Icon mt={2} boxSize={6}><FaSignInAlt /></Icon>
           <Text>Log Out</Text>
         </Link>
@@ -70,6 +75,7 @@ const AccountPages = ({ onClose }) => {
 
 const Sidebar = ({ isOpen, variant, onClose }) => {
   const { colorMode } = useColorMode();
+  let bgColor = colorMode ==="light" ? "gray.300":"gray.700"; 
   return variant === 'sidebar' ? (
     <Box
       position="fixed"
@@ -78,18 +84,18 @@ const Sidebar = ({ isOpen, variant, onClose }) => {
       w="240px"
       top={0}
       h="100%"
-      bgGradient={colorMode === "light" ? 'linear(to-r, blue.900, blue.600)' : ""}
+      bg={colorMode === "light" ? 'gray.200' : ""}
       boxShadow="2xl"
     >
       <Box>
-        <Heading size='md' color='white' textAlign="center">
+        <Heading size='md' color='blue.700' textAlign="center">
           <Link as={ReachLink} to="/" _hover={{ "textDecoration": "none", "opacity": "0.8" }}>Chakra App</Link>
         </Heading>
       </Box>
       <Divider my="5" />
       <Stack spacing={7}>
-        <SidebarContent onClose={onClose} />
-        <AccountPages onClose={onClose} />
+        <SidebarContent onClose={onClose} bgColor={bgColor} />
+        <AccountPages onClose={onClose} bgColor={bgColor} />
       </Stack>
     </Box>
   ) : (
@@ -103,8 +109,8 @@ const Sidebar = ({ isOpen, variant, onClose }) => {
           <Divider mb="5" />
           <DrawerBody>
             <Stack spacing={7}>
-              <SidebarContent onClose={onClose} />
-              <AccountPages onClose={onClose} />
+              <SidebarContent onClose={onClose} bgColor={bgColor} />
+              <AccountPages onClose={onClose} bgColor={bgColor} />
             </Stack>
           </DrawerBody>
         </DrawerContent>
