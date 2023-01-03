@@ -2,7 +2,7 @@ import { createBrowserRouter, createRoutesFromElements, Route } from "react-rout
 import ProtectedRoot from "../components/layout/ProtectedRoot";
 import Root from "../components/layout/Root";
 import Dashboard from "../pages/Dashboard";
-import Login from "../pages/Login";
+import Login from "../pages/login/Login";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
