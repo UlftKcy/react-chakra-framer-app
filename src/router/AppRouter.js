@@ -7,10 +7,10 @@ import Login from "../pages/login/Login";
 export const router = createBrowserRouter(
     createRoutesFromElements(
         <>
-            <Route element={<Root/>}>
+            <Route element={<Root />}>
                 <Route path='/login' element={<Login />} />
             </Route>
-            <Route path="/" element={<ProtectedRoot/>}>
+            <Route path="/" element={<ProtectedRoot />}>
                 <Route index element={<Dashboard />} />
             </Route>
         </>
