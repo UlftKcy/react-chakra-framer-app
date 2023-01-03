@@ -37,7 +37,7 @@ const SectionInfo = () => {
                                 <CircularProgressLabel><Icon><ViewIcon color="teal.400" /></Icon></CircularProgressLabel>
                             </CircularProgress>
                         </Box>
-                        <Flex boxShadow="md" rounded="md" pos="absolute" bottom="3" justifyContent="space-between" w="75%" bg="blue.800" color="white" p="4">
+                        <Flex boxShadow="md" rounded="md" pos="absolute" bottom="3" justifyContent="space-between" w="75%" bg="gray.200" color="blue.700" p="4">
                             <Box><Text fontSize="xs">0%</Text></Box>
                             <Box textAlign="center"><Text fontSize="lg" fontWeight="bold">80%</Text><Text fontSize="xs" opacity="0.7">Based on likes</Text></Box>
                             <Box><Text fontSize="xs">100%</Text></Box>

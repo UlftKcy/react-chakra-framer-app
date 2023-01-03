@@ -1,15 +1,12 @@
 import { HamburgerIcon } from '@chakra-ui/icons';
-import { Box, Button, ButtonGroup, Flex, Heading, IconButton, useColorMode } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Flex, IconButton, useColorMode } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
 const Navbar = ({ showSidebarButton = true, onShowSidebar }) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Flex minWidth='max-content' justify="space-between" alignItems='center' mb="10">
-      <Box>
-        <Heading size='md'>Current Page Name</Heading>
-      </Box>
+    <Flex minWidth='max-content' justify="end" alignItems='center'>
       <ButtonGroup gap='2'>
         <Button as={motion.button} whileHover={{ rotate: 360 , transition: { duration: 0.5 }}} onClick={toggleColorMode}>
           {colorMode === "light" ?
