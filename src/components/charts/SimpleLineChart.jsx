@@ -15,8 +15,8 @@ const SimpleLineChart = () => {
                 }}
             >
                 <CartesianGrid strokeDasharray="2 2" />
-                <XAxis dataKey="name" stroke="#ddd" />
-                <YAxis stroke="#ddd" />
+                <XAxis dataKey="name"/>
+                <YAxis/>
                 <Tooltip />
                 <Legend />
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />

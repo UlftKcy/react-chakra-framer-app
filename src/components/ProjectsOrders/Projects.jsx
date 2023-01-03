@@ -2,19 +2,19 @@ import { Card, CardBody, CardHeader, Heading, Table, TableCaption, TableContaine
 
 const Projects = () => {
   return (
-    <Card w='100%' h="100%" color="white" px={3}>
+    <Card w='100%' h="100%" px={3}>
             <CardHeader>
-                <Heading size="md">Projects</Heading>
+                <Heading size="md" color="teal.500">Projects</Heading>
             </CardHeader>
             <CardBody>
                 <TableContainer>
                     <Table variant='simple' size="lg">
-                        <TableCaption color="whiteAlpha.600">Imperial to metric conversion factors</TableCaption>
+                        <TableCaption color="gray.400">Imperial to metric conversion factors</TableCaption>
                         <Thead>
                             <Tr>
-                                <Th color="whiteAlpha.700">To convert</Th>
-                                <Th color="whiteAlpha.700">into</Th>
-                                <Th color="whiteAlpha.700" isNumeric>multiply by</Th>
+                                <Th color="gray.500">To convert</Th>
+                                <Th color="gray.500">into</Th>
+                                <Th color="gray.500" isNumeric>multiply by</Th>
                             </Tr>
                         </Thead>
                         <Tbody>

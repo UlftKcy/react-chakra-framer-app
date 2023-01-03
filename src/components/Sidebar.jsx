@@ -25,7 +25,7 @@ const SidebarContent = ({ onClick, bgColor }) =>{
   
   return (
     <List spacing={5}>
-      <Link as={NavLink} to="/dashboard" _activeLink={{ bg: bgColor, fontWeight: "semibold" }} display="flex" alignItems="center" rounded="md" py={1} pr={6} pl={2} onClick={onClick} _hover={{ "textDecoration": "none", "bg": bgColor }} fontSize="sm">
+      <Link as={NavLink} to="/" _activeLink={{ bg: bgColor, fontWeight: "semibold" }} display="flex" alignItems="center" rounded="md" py={1} pr={6} pl={2} onClick={onClick} _hover={{ "textDecoration": "none", "bg": bgColor }} fontSize="sm">
         <Icon mt={2} boxSize={6}><AiFillHome /></Icon>
         <Text>Dashboard</Text>
       </Link>
@@ -84,11 +84,10 @@ const Sidebar = ({ isOpen, variant, onClose }) => {
       w="240px"
       top={0}
       h="100%"
-      bg={colorMode === "light" ? 'gray.200' : ""}
       boxShadow="2xl"
     >
       <Box>
-        <Heading size='md' color='blue.700' textAlign="center">
+        <Heading size='md' color='blue.500' textAlign="center">
           <Link as={ReachLink} to="/" _hover={{ "textDecoration": "none", "opacity": "0.8" }}>Chakra App</Link>
         </Heading>
       </Box>
@@ -101,9 +100,9 @@ const Sidebar = ({ isOpen, variant, onClose }) => {
   ) : (
     <Drawer isOpen={isOpen} placement="left" onClose={onClose} size="xs">
       <DrawerOverlay>
-        <DrawerContent bgGradient={colorMode === "light" ? 'linear(to-r, blue.900, blue.600)' : ""}>
+        <DrawerContent>
           <DrawerCloseButton color="white" mt="1" />
-          <DrawerHeader size='md' color='teal.300'>
+          <DrawerHeader size='md' color='blue.500'>
             <Link as={ReachLink} to="/" _hover={{ "textDecoration": "none", "color": "teal.400" }}>Chakra App</Link>
           </DrawerHeader>
           <Divider mb="5" />

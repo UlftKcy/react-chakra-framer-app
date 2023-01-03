@@ -10,8 +10,8 @@ export const router = createBrowserRouter(
             <Route element={<Root/>}>
                 <Route path='/login' element={<Login />} />
             </Route>
-            <Route element={<ProtectedRoot/>}>
-                <Route path='/dashboard' element={<Dashboard />} />
+            <Route path="/" element={<ProtectedRoot/>}>
+                <Route index element={<Dashboard />} />
             </Route>
         </>
     )

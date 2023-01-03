@@ -15,8 +15,8 @@ const BarChart = () => {
         }}
       >
         <CartesianGrid strokeDasharray="2 2" />
-        <XAxis dataKey="name" stroke="#ddd" />
-        <YAxis stroke="#ddd" />
+        <XAxis dataKey="name"/>
+        <YAxis/>
         <Tooltip />
         <Area type="monotone" dataKey="uv" stackId="1" stroke="#8884d8" fill="#8884d8" />
         <Area type="monotone" dataKey="pv" stackId="1" stroke="#82ca9d" fill="#82ca9d" />

@@ -6,10 +6,10 @@ import Projects from './Projects';
 const ProjectsOrders = () => {
     return (
         <Fragment>
-            <GridItem colSpan={2} borderRadius="lg" bgGradient='linear(to-r, blue.900, blue.600)'>
+            <GridItem colSpan={2} borderRadius="lg" bg='whiteAlpha.700'>
                 <Projects />
             </GridItem>
-            <GridItem colSpan={2} borderRadius="lg" bgGradient='linear(to-r, blue.900, blue.600)'>
+            <GridItem colSpan={2} borderRadius="lg" bg='whiteAlpha.700'>
                 <Orders />
             </GridItem>
         </Fragment>

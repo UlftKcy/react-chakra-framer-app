@@ -22,7 +22,7 @@ const Login = () => {
         };
         if (email && password) {
             localStorage.setItem("user", JSON.stringify(user));
-            navigate('/dashboard');
+            navigate('/');
         }
     }
 
